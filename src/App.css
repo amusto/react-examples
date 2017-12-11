@@ -40,6 +40,14 @@
   font-size: large;
 }
 
+.main-container {
+  margin: 5px;
+}
+
+.panel-header {
+  font-weight: bold;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

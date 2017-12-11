@@ -6,6 +6,7 @@ import './App.css';
 import Clock from './Components/Clock.js';
 import Tabs from './Components/Tabs.js';
 import Calculator from './Components/Calculator.js';
+import FilterableProductTable from './Components/ProductSearch.js';
 
 let _Applications = [];
 let introduction = {
@@ -16,12 +17,14 @@ let introduction = {
 };
 _Applications.push(introduction);
 
-/* let loginForm = {
-  id: 'appLoginForm',
-  name: 'Login Form',
-  componentName: 'LoginControl'
+let productSearch = {
+  id: 'appProduct',
+  key: 'appProduct',  
+  name: 'Product Search',
+  component: <FilterableProductTable />,
+  content: 'Product Search Application.'
 };
-_Applications.push(loginForm);*/
+_Applications.push(productSearch);
 
 let boilingTemperature = {
   id: 'appBoiling',
@@ -34,22 +37,18 @@ _Applications.push(boilingTemperature);
 
 class App extends Component {
   render() {
+    const defaultActiveKey = 1;    
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <Clock />
-          <h1 className="App-title">REACT Code Samples</h1>
+          <h1 className="App-title"><a href="https://github.com/amusto/react-examples">https://github.com/amusto/react-examples</a></h1>
         </header>
-        <p className="App-intro">https://github.com/amusto/react-examples</p>
-  
         <Grid>
-          <Row className="show-grid">
-              <Col xs={12} md={8}>
-                <Tabs App={Calculator} Applications={_Applications}/>
-              </Col>                
-              <Col xs={6} md={4}>
-                <div><strong>Description</strong></div>
+          <Row className="show-grid main-container">
+              <Col xs={12} md={12}>
+                <Tabs Applications={_Applications} defaultActiveKey={defaultActiveKey}/>
               </Col>                
           </Row>
         </Grid>

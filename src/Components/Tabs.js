@@ -20,8 +20,11 @@ function NavTabPane(props) {
   const apps = props.apps;
   const tabPanes = apps.map((app) =>
     <Tab.Pane eventKey={app.id} key={app.id}>
+    <div className="text-center">
+      <div className="panel-header">{app.name}</div>
       {app.content}
       {app.component}
+    </div>  
     </Tab.Pane>    
   );
   return (
@@ -34,9 +37,10 @@ function NavTabPane(props) {
 class Tabs extends Component {
     render() {
       const _Applications = this.props.Applications;
+      const defaultActiveKey = this.props.defaultActiveKey;      
 
       return (
-        <Tab.Container id="left-tabs-example" defaultActiveKey={_Applications[0].id}>
+        <Tab.Container id="left-tabs-example" defaultActiveKey={_Applications[defaultActiveKey].id}>
           <Row className="clearfix">
             <Col sm={4}>
               <NavItems apps={_Applications} />
