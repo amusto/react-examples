@@ -13,7 +13,7 @@ class ProductCategoryRow extends Component {
     render() {
       const category = this.props.category;
       return (
-        <tr>
+        <tr style={{paddingTop: '5px'}}>
           <th colSpan="2">
             {category}
           </th>
@@ -71,15 +71,17 @@ class ProductCategoryRow extends Component {
       });
   
       return (
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>{rows}</tbody>
-        </table>
+        <div>
+          <table className="product-table" align="center">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>{rows}</tbody>
+          </table>
+        </div>  
       );
     }
   }
