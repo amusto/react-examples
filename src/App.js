@@ -7,8 +7,6 @@ import ApplicationData from './applicationData.js';
 //TODO: Refactor to import from ./Components
 import Clock from './Components/Clock.js';
 import Tabs from './Components/Tabs.js';
-// import Calculator from './Components/Calculator.js';
-// import FilterableProductTable from './Components/ProductSearch.js';
 
 class App extends Component {
   render() {
